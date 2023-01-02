@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h1>Atualizar dados</h1>
+        <form action="updaterecord/{{ membro.id }}" method="post">
+            {% csrf_token %}
+            <label for="nome">Nome:</label><br>
+            <input name="nome" value="{{ membro.nome }}">
+            <br><br>
+            <label for="sobrenome">Sobrenome:</label><br>
+            <input name="sobrenome" value="{{ membro.sobrenome }}">
+            <br><br>
+            <input type="submit" value="Atualizar">
+
+        </form>
+
+    </body>
+</html>

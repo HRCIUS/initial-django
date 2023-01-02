@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myfirst.css' %}">
+    <script src="{% static 'myfirst.js' %}"></script>
+    <title>Tabela dos Cria</title>
+</head>
+<body>
+    <button onclick="myFunction();">Click me!</button>
+    <h1>Membros</h1>
+    
+    <table border="1">
+        <thead>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+        </thead>
+        {% for x in meusMembros %}
+        <tr>
+            <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
+            <td>{{ x.nome }}</td>
+            <td>{{ x.sobrenome }}</td>
+            <td><a href="delete/{{ x.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>
+        <a href="add/">Add member</a>
+    </p>
+    <img src="{% static 'download.jfif' %}" alt="">
+    
+</body>
+</html>
